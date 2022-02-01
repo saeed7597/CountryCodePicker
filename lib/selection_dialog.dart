@@ -63,9 +63,9 @@ class _SelectionDialogState extends State<SelectionDialog> {
         padding: const EdgeInsets.all(0.0),
         child: Container(
           clipBehavior: Clip.hardEdge,
-          width: widget.size?.width ?? MediaQuery.of(context).size.width,
+          width: widget.size?.width ?? MediaQuery.of(context).size.width * 0.85,
           height:
-              widget.size?.height ?? MediaQuery.of(context).size.height * 0.85,
+          widget.size?.height ?? MediaQuery.of(context).size.height * 0.80,
           decoration: widget.boxDecoration ??
               BoxDecoration(
                 color: widget.backgroundColor ?? Colors.white,
@@ -93,6 +93,7 @@ class _SelectionDialogState extends State<SelectionDialog> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: TextField(
+                    autofocus: true,
                     style: widget.searchStyle,
                     decoration: widget.searchDecoration,
                     onChanged: _filterElements,
